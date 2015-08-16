@@ -290,7 +290,7 @@ print(adjtotbyday)
 ## ..        ...   ...
 ```
 
-Next, let's look at the frequency distribution of the total number of steps taken in a histogram. We'll use ggplot2 for this.
+For comparison with the histogram above, let's take another look at the frequency distribution of the total number of steps taken once more.
 
 
 ```r
@@ -301,7 +301,7 @@ ggplot(data=adjtotbyday, aes(adjtotbyday$Steps)) +
 
 ![plot of chunk adjhiststeps](figures/rr1-deizu-adjhiststeps-1.png) 
 
-Now that we have the totals calculated, we can also work out the mean and median of total steps per day. (Note that we're excluding NA values.)
+Now that we have the totals calculated, we can also work out the mean and median of total steps per day. (Note that we no longer need to exclude NA values, since we replaced them in the dataset already.)
 
 
 ```r
@@ -320,7 +320,9 @@ median(adjtotbyday$Steps)
 ## [1] 10762
 ```
 
-As the code above shows, if we round to avoid partial steps, then the *mean* is **10766 steps**, and the *median* is **10762 steps**. For comparison, you'll recall that our analysis of the raw data, where we dropped NA values and again rounded to avoid partial steps, showed a *mean* of **10766 steps** and a *median* of **10765 steps**.
+As the code above shows, if we round to avoid partial steps, then the *mean* is **10766 steps**, and the *median* is **10762 steps**. 
+
+For comparison, you'll recall that our analysis of the raw data, where we dropped NA values and again rounded to avoid partial steps, showed a *mean* of **10766 steps** and a *median* of **10765 steps**.
 
 We can see that our adjusted mean differs from the original mean by **0 steps** while the adjusted median differs from the original median by **-3 steps**.
 

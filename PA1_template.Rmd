@@ -157,7 +157,7 @@ names(adjtotbyday) <- c("Date","Steps")
 print(adjtotbyday)
 ```
 
-Next, let's look at the frequency distribution of the total number of steps taken in a histogram. We'll use ggplot2 for this.
+For comparison with the histogram above, let's take another look at the frequency distribution of the total number of steps taken once more.
 
 ```{r adjhiststeps, echo=TRUE}
 ggplot(data=adjtotbyday, aes(adjtotbyday$Steps)) +
@@ -165,14 +165,16 @@ ggplot(data=adjtotbyday, aes(adjtotbyday$Steps)) +
     labs(x="Adjusted Total Daily Steps", y="Frequency")
 ```
 
-Now that we have the totals calculated, we can also work out the mean and median of total steps per day. (Note that we're excluding NA values.)
+Now that we have the totals calculated, we can also work out the mean and median of total steps per day. (Note that we no longer need to exclude NA values, since we replaced them in the dataset already.)
 
 ```{r adjmeanmedbyday, echo=TRUE}
 mean(adjtotbyday$Steps)
 median(adjtotbyday$Steps)
 ```
 
-As the code above shows, if we round to avoid partial steps, then the *mean* is **`r round(mean(adjtotbyday$Steps))` steps**, and the *median* is **`r round(median(adjtotbyday$Steps))` steps**. For comparison, you'll recall that our analysis of the raw data, where we dropped NA values and again rounded to avoid partial steps, showed a *mean* of **`r round(mean(totbyday$Steps, na.rm=TRUE))` steps** and a *median* of **`r round(median(totbyday$Steps, na.rm=TRUE))` steps**.
+As the code above shows, if we round to avoid partial steps, then the *mean* is **`r round(mean(adjtotbyday$Steps))` steps**, and the *median* is **`r round(median(adjtotbyday$Steps))` steps**. 
+
+For comparison, you'll recall that our analysis of the raw data, where we dropped NA values and again rounded to avoid partial steps, showed a *mean* of **`r round(mean(totbyday$Steps, na.rm=TRUE))` steps** and a *median* of **`r round(median(totbyday$Steps, na.rm=TRUE))` steps**.
 
 We can see that our adjusted mean differs from the original mean by **`r round(mean(adjtotbyday$Steps))-round(mean(totbyday$Steps, na.rm=TRUE))` steps** while the adjusted median differs from the original median by **`r round(median(adjtotbyday$Steps))-round(median(totbyday$Steps, na.rm=TRUE))` steps**.
 
