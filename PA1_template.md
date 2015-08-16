@@ -290,7 +290,7 @@ print(adjtotbyday)
 ## ..        ...   ...
 ```
 
-For comparison with the histogram above, let's take another look at the frequency distribution of the total number of steps taken once more.
+For comparison with the histogram above, let's take another look at the frequency distribution of the total number of steps taken.
 
 
 ```r
@@ -371,3 +371,5 @@ ggplot(data=weekdayvsweekend, aes(x = Interval, y = Steps)) +
 ```
 
 ![plot of chunk panelplot](figures/rr1-deizu-panelplot-1.png) 
+
+Seems like on average, the subjects who provided this data walk more in the morning hours on both weekends and weekdays, but during the weekend, they walk more during other daytime hours than they do during the week.
